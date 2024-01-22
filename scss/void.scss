@@ -1,0 +1,9 @@
+$mainColor: #c7f80d;
+$secondColor: #55650a;
+$darkColor: #161616;
+@mixin centerDom {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

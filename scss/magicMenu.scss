@@ -1,0 +1,101 @@
+/*------------------*\
+  #客製樣式 STYLE
+\*------------------*/
+ul {
+  @include centerDom;
+  gap: 10px;
+  padding: 10px 60px;
+  background: #242424;
+  border-radius: 30px;
+
+  li {
+    list-style: none;
+
+    a {
+      @include centerDom;
+      text-decoration: none;
+      width: 80px;
+      height: 80px;
+      z-index: 10000;
+      color: #444;
+
+      ion-icon {
+        font-size: 2.5em;
+        transition: 0.5s;
+        pointer-events: none;
+      }
+    }
+
+    &:hover a ion-icon,
+    &.active a ion-icon {
+      color: $mainColor;
+      filter: drop-shadow(0 0 15px $mainColor);
+    }
+    &.active {
+      a ion-icon {
+        transform: translateY(-50px);
+      }
+      text {
+        opacity: 1;
+        color: $mainColor;
+        filter: drop-shadow(0 0 10px $mainColor);
+      }
+    }
+
+    text {
+      position: absolute;
+      pointer-events: none;
+      transform: translateY(50px);
+      opacity: 0;
+      font-size: 0.8em;
+      transition: 0.5s;
+      text-transform: uppercase;
+    }
+  }
+}
+#market {
+  position: absolute;
+  top: -40px;
+  left: 60px;
+  width: 80px;
+  height: 80px;
+  background: $secondColor;
+  border-radius: 20px;
+  border-top: 2px solid $mainColor;
+  border-left: 2px solid $mainColor;
+  box-shadow: 0 0 0 10px $darkColor, 0 2px 0 9px $mainColor;
+  transition: 0.5s;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 38px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    left: -30px;
+    border-radius: 0 20px 0 20px;
+    box-shadow: 4px -4px 0 4px $darkColor;
+  }
+
+  &::after {
+    border-radius: 20px 0 20px 0;
+    box-shadow: -4px -4px 0 4px $darkColor;
+    left: unset;
+    right: -30px;
+  }
+
+  span {
+    position: absolute;
+    top: 122px;
+    width: 120%;
+    left: -10%;
+    height: 30px;
+    background-color: $secondColor;
+    box-shadow: 0 0 0 10px $darkColor, 0 -2px 0 9px $mainColor;
+    border-radius: 20px;
+    border-right: 1px solid $mainColor;
+    border-bottom: 1px solid $mainColor;
+  }
+}
